@@ -1,0 +1,205 @@
+:root {
+    --service-primary: #4361ee;
+    --service-primary-light: rgba(67, 97, 238, 0.1);
+    --service-secondary: #3f37c9;
+    --service-white: #ffffff;
+    --service-dark: #212529;
+    --service-gray: #6c757d;
+    --service-light-gray: #f8f9fa;
+    --service-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --service-shadow-hover: 0 15px 40px rgba(33, 69, 227, 1);
+    --service-transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+
+/* Carte de service */
+
+.service-card {
+    perspective: 1000px;
+    height: 80%;
+}
+
+.service-card-inner {
+    position: relative;
+    background-color: var(--service-white);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: var(--service-shadow);
+    text-align: center;
+    transition: var(--service-transition);
+    height: 100%;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.service-card:hover .service-card-inner {
+    transform: translateY(-10px);
+    box-shadow: var(--service-shadow-hover);
+}
+
+
+/* Conteneur d'icône */
+
+.service-icon-container {
+    position: relative;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+}
+
+
+/* Fond de l'icône */
+
+.service-icon-backdrop {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, var(--service-primary-light), rgba(255, 255, 255, 0.8));
+    border-radius: 50%;
+    filter: blur(5px);
+    opacity: 0;
+    transition: var(--service-transition);
+    z-index: -1;
+}
+
+.service-card:hover .service-icon-backdrop {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+/* Icône */
+
+.service-icon {
+    background: linear-gradient(135deg, var(--service-white), var(--service-light-gray));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--service-transition);
+    z-index: 2;
+}
+
+.service-card:hover .service-icon {
+    background: linear-gradient(135deg, var(--service-primary), var(--service-secondary));
+    transform: scale(1.1) rotate(5deg);
+}
+
+.service-icon svg {
+    width: 36px;
+    height: 36px;
+    transition: var(--service-transition);
+}
+
+.service-card:hover .service-icon svg {
+    fill: var(--service-white);
+    transform: scale(1.1);
+}
+
+
+/* Texte */
+
+.service-title {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--service-dark);
+    position: relative;
+    display: inline-block;
+    transition: var(--service-transition);
+}
+
+.service-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 40px;
+    height: 3px;
+    background: var(--service-primary);
+    transition: var(--service-transition);
+    transform-origin: center;
+}
+
+.service-card:hover .service-title::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.service-description {
+    color: var(--service-gray);
+    font-size: 1rem;
+    line-height: 1.7;
+    transition: var(--service-transition);
+}
+
+.service-card:hover .service-description {
+    color: var(--service-dark);
+}
+
+
+/* Effet de hover */
+
+.service-hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(67, 97, 238, 0.03), rgba(255, 255, 255, 0.5));
+    opacity: 0;
+    transition: var(--service-transition);
+    z-index: -1;
+}
+
+.service-card:hover .service-hover-effect {
+    opacity: 1;
+}
+
+
+/* Responsive */
+
+@media (max-width: 992px) {
+    .service-card-inner {
+        padding: 2rem;
+    }
+    .service-icon {
+        width: 70px;
+        height: 70px;
+    }
+    .service-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-card-inner {
+        padding: 1.8rem;
+    }
+    .service-title {
+        font-size: 1.3rem;
+    }
+    .service-description {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .service-card-inner {
+        padding: 1.5rem;
+    }
+    .service-icon {
+        width: 60px;
+        height: 60px;
+    }
+    .service-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+}

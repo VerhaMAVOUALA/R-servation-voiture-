@@ -1,0 +1,570 @@
+               :root {
+                  --luxury-primary: #1a1a2e;
+                  --luxury-secondary: #4361ee;
+                  --luxury-accent: #3f37c9;
+                  --luxury-light: #f8f9fa;
+                  --luxury-white: #ffffff;
+                  --luxury-dark: #16213e;
+                  --luxury-gold: #d4af37;
+                  --luxury-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+                  --luxury-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+                  --luxury-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+                  --luxury-border-radius: 12px;
+              }
+              /* Base Styles */
+              
+              .luxury-reservation {
+                  font-family: 'Montserrat', sans-serif;
+                  color: var(--luxury-dark);
+                  line-height: 1.6;
+              }
+              
+              .container {
+                  max-width: 1200px;
+                  margin: 0 auto;
+                  padding: 0 2rem;
+              }
+              /* Hero Section */
+              
+              .reservation-hero {
+                  background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(67, 97, 238, 0.8)), url('https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2036&q=80');
+                  background-size: cover;
+                  background-position: center;
+                  background-attachment: fixed;
+                  color: var(--luxury-white);
+                  padding: 8rem 0 6rem;
+                  text-align: center;
+                  position: relative;
+                  overflow: hidden;
+              }
+              
+              .hero-overlay {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: linear-gradient(135deg, rgba(26, 26, 46, 0.7), rgba(67, 97, 238, 0.6));
+                  z-index: 0;
+              }
+              
+              .hero-content {
+                  position: relative;
+                  z-index: 1;
+                  max-width: 800px;
+                  margin: 0 auto;
+              }
+              
+              .hero-content h1 {
+                  font-size: 3.2rem;
+                  margin-bottom: 1.2rem;
+                  font-weight: 700;
+                  letter-spacing: 1px;
+                  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                  animation: fadeInDown 1s ease-out;
+              }
+              
+              .hero-content p {
+                  font-size: 1.3rem;
+                  opacity: 0.9;
+                  animation: fadeIn 1.2s ease-out 0.3s both;
+              }
+              /* Progress Steps */
+              
+              .luxury-progress {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin: 4rem auto;
+                  position: relative;
+                  max-width: 900px;
+              }
+              
+              .progress-step {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  z-index: 1;
+                  flex: 1;
+              }
+              
+              .step-bubble {
+                  width: 60px;
+                  height: 60px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  background: var(--luxury-white);
+                  border: 3px solid var(--luxury-light);
+                  border-radius: 50%;
+                  margin-bottom: 1rem;
+                  transition: var(--luxury-transition);
+                  box-shadow: var(--luxury-shadow);
+                  position: relative;
+              }
+              
+              .progress-step.active .step-bubble {
+                  background: linear-gradient(135deg, var(--luxury-secondary), var(--luxury-accent));
+                  border-color: transparent;
+                  color: var(--luxury-white);
+                  transform: scale(1.1);
+              }
+              
+              .step-number {
+                  font-weight: 700;
+                  font-size: 1.2rem;
+                  color: var(--luxury-dark);
+                  transition: var(--luxury-transition);
+              }
+              
+              .progress-step.active .step-number {
+                  color: var(--luxury-white);
+              }
+              
+              .step-label {
+                  font-size: 0.95rem;
+                  color: var(--luxury-dark);
+                  font-weight: 500;
+                  transition: var(--luxury-transition);
+              }
+              
+              .progress-step.active .step-label {
+                  color: var(--luxury-secondary);
+                  font-weight: 600;
+              }
+              
+              .progress-connector {
+                  flex: 1;
+                  height: 3px;
+                  background: linear-gradient(90deg, var(--luxury-secondary), var(--luxury-accent));
+                  opacity: 0.2;
+                  transition: var(--luxury-transition);
+              }
+              
+              .progress-step.active+.progress-connector {
+                  opacity: 1;
+              }
+              /* Reservation Form Container */
+              
+              .reservation-form-container {
+                  background: var(--luxury-white);
+                  border-radius: var(--luxury-border-radius);
+                  box-shadow: var(--luxury-shadow);
+                  padding: 3rem;
+                  margin: 2rem auto;
+              }
+              
+              .reservation-step h2 {
+                  font-size: 2rem;
+                  color: var(--luxury-primary);
+                  margin-bottom: 2.5rem;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 0.8rem;
+              }
+              
+              .step-icon {
+                  font-size: 1.8rem;
+              }
+              /* Form Elements */
+              
+              .form-group {
+                  margin-bottom: 1.5rem;
+              }
+              
+              .form-group label {
+                  display: block;
+                  margin-bottom: 0.6rem;
+                  font-weight: 500;
+                  color: var(--luxury-primary);
+              }
+              
+              .luxury-input,
+              .luxury-select,
+              .luxury-textarea {
+                  width: 100%;
+                  padding: 1rem;
+                  border: 1px solid var(--luxury-light);
+                  border-radius: 8px;
+                  font-size: 1rem;
+                  transition: var(--luxury-transition);
+                  background: var(--luxury-light);
+                  font-family: 'Montserrat', sans-serif;
+              }
+              
+              .luxury-input:focus,
+              .luxury-select:focus,
+              .luxury-textarea:focus {
+                  border-color: var(--luxury-secondary);
+                  outline: none;
+                  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+                  background: var(--luxury-white);
+              }
+              
+              .luxury-select {
+                  appearance: none;
+                  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+                  background-repeat: no-repeat;
+                  background-position: right 1rem center;
+                  background-size: 1rem;
+              }
+              
+              .luxury-textarea {
+                  min-height: 120px;
+                  resize: vertical;
+              }
+              
+              .form-row {
+                  display: grid;
+                  grid-template-columns: repeat(2, 1fr);
+                  gap: 1.5rem;
+                  margin-bottom: 1.5rem;
+              }
+              /* Buttons */
+              
+              .luxury-btn {
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding: 1rem 2rem;
+                  border-radius: 50px;
+                  font-weight: 600;
+                  text-decoration: none;
+                  transition: var(--luxury-transition);
+                  cursor: pointer;
+                  font-size: 1rem;
+                  border: none;
+              }
+              
+              .luxury-btn.primary {
+                  background: linear-gradient(135deg, var(--luxury-secondary), var(--luxury-accent));
+                  color: var(--luxury-white);
+                  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+              }
+              
+              .luxury-btn.primary:hover {
+                  transform: translateY(-3px);
+                  box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
+              }
+              
+              .luxury-btn.secondary {
+                  background: transparent;
+                  color: var(--luxury-secondary);
+                  border: 2px solid var(--luxury-secondary);
+              }
+              
+              .luxury-btn.secondary:hover {
+                  background: rgba(67, 97, 238, 0.1);
+                  transform: translateY(-3px);
+              }
+              
+              .btn-arrow {
+                  margin: 0 0.5rem;
+                  transition: var(--luxury-transition);
+              }
+              
+              .luxury-btn:hover .btn-arrow {
+                  transform: translateX(3px);
+              }
+              
+              .luxury-btn.secondary:hover .btn-arrow {
+                  transform: translateX(-3px);
+              }
+              
+              .form-actions {
+                  display: flex;
+                  justify-content: space-between;
+                  margin-top: 2rem;
+                  gap: 1rem;
+              }
+              /* Vehicle Showcase */
+              
+              .vehicles-showcase {
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                  gap: 2rem;
+                  margin-bottom: 3rem;
+              }
+              
+              .vehicle-card {
+                  background: var(--luxury-white);
+                  border-radius: var(--luxury-border-radius);
+                  overflow: hidden;
+                  box-shadow: var(--luxury-shadow);
+                  transition: var(--luxury-transition);
+                  border: 2px solid transparent;
+                  position: relative;
+              }
+              
+              .vehicle-card:hover {
+                  transform: translateY(-10px);
+                  box-shadow: var(--luxury-shadow-hover);
+              }
+              
+              .vehicle-card.selected {
+                  border-color: var(--luxury-secondary);
+                  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+              }
+              
+              .vehicle-card.selected::after {
+                  content: '✓ Sélectionné';
+                  position: absolute;
+                  top: 15px;
+                  right: 15px;
+                  background: var(--luxury-secondary);
+                  color: white;
+                  padding: 0.3rem 0.8rem;
+                  border-radius: 20px;
+                  font-size: 0.8rem;
+                  font-weight: 600;
+              }
+              
+              .vehicle-image {
+                  height: 200px;
+                  overflow: hidden;
+                  position: relative;
+              }
+              
+              .vehicle-image img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  transition: transform 0.5s ease;
+              }
+              
+              .vehicle-overlay {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: linear-gradient(to top, rgba(26, 26, 46, 0.7), transparent);
+              }
+              
+              .vehicle-card:hover .vehicle-image img {
+                  transform: scale(1.1);
+              }
+              
+              .vehicle-info {
+                  padding: 1.5rem;
+                  text-align: center;
+              }
+              
+              .vehicle-info h3 {
+                  font-size: 1.3rem;
+                  margin-bottom: 0.5rem;
+                  color: var(--luxury-primary);
+              }
+              
+              .vehicle-info p {
+                  color: var(--luxury-dark);
+                  font-size: 0.95rem;
+                  margin-bottom: 1rem;
+                  opacity: 0.8;
+              }
+              
+              .vehicle-price {
+                  font-size: 1.3rem;
+                  font-weight: 700;
+                  color: var(--luxury-secondary);
+                  margin: 1rem 0;
+              }
+              
+              .vehicle-price .price {
+                  font-size: 1.5rem;
+              }
+              
+              .vehicle-price .per-hour {
+                  font-size: 1rem;
+                  opacity: 0.8;
+              }
+              
+              .vehicle-features {
+                  display: flex;
+                  justify-content: center;
+                  gap: 1rem;
+                  flex-wrap: wrap;
+                  margin-top: 1rem;
+              }
+              
+              .vehicle-features span {
+                  font-size: 0.8rem;
+                  opacity: 0.8;
+              }
+              /* Booking Summary */
+              
+              .booking-summary {
+                  background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(255, 255, 255, 0.8));
+                  border-radius: var(--luxury-border-radius);
+                  padding: 2rem;
+                  margin-top: 3rem;
+                  border: 1px solid var(--luxury-light);
+              }
+              
+              .booking-summary h3 {
+                  text-align: center;
+                  color: var(--luxury-primary);
+                  margin-bottom: 1.5rem;
+                  font-size: 1.5rem;
+                  position: relative;
+              }
+              
+              .booking-summary h3::after {
+                  content: '';
+                  position: absolute;
+                  bottom: -8px;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  width: 60px;
+                  height: 2px;
+                  background: linear-gradient(90deg, var(--luxury-secondary), var(--luxury-accent));
+              }
+              
+              .summary-grid {
+                  display: grid;
+                  grid-template-columns: repeat(2, 1fr);
+                  gap: 1rem;
+              }
+              
+              .summary-item {
+                  margin-bottom: 0.8rem;
+              }
+              
+              .summary-label {
+                  font-weight: 500;
+                  color: var(--luxury-primary);
+              }
+              
+              .summary-value {
+                  color: var(--luxury-dark);
+              }
+              
+              .summary-total {
+                  grid-column: span 2;
+                  margin-top: 1rem;
+                  padding-top: 1rem;
+                  border-top: 1px dashed var(--luxury-secondary);
+                  font-size: 1.3rem;
+                  font-weight: 700;
+              }
+              
+              .summary-total .summary-value {
+                  color: var(--luxury-secondary);
+              }
+              /* Confirmation Screen */
+              
+              .confirmation-screen {
+                  text-align: center;
+                  padding: 2rem;
+              }
+              
+              .confirmation-badge {
+                  width: 100px;
+                  height: 100px;
+                  margin: 0 auto 2rem;
+                  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  animation: bounceIn 0.8s ease-out;
+              }
+              
+              .confirmation-badge svg {
+                  width: 50px;
+                  height: 50px;
+                  fill: white;
+              }
+              
+              .confirmation-screen h2 {
+                  font-size: 2.2rem;
+                  color: var(--luxury-primary);
+                  margin-bottom: 1.5rem;
+              }
+              
+              .confirmation-message {
+                  color: var(--luxury-dark);
+                  margin-bottom: 2rem;
+                  max-width: 700px;
+                  margin-left: auto;
+                  margin-right: auto;
+                  font-size: 1.1rem;
+              }
+              
+              .confirmation-details {
+                  background: var(--luxury-light);
+                  border-radius: var(--luxury-border-radius);
+                  padding: 2rem;
+                  max-width: 600px;
+                  margin: 0 auto 2rem;
+                  text-align: left;
+              }
+              
+              .confirmation-details p {
+                  margin-bottom: 0.7rem;
+              }
+              
+              .confirmation-details p:last-child {
+                  margin-bottom: 0;
+              }
+              
+              .contact-note {
+                  font-style: italic;
+                  color: var(--luxury-dark);
+                  opacity: 0.8;
+                  margin-top: 2rem;
+                  font-size: 0.95rem;
+              }
+              
+              .confirmation-actions {
+                  margin-top: 2rem;
+              }
+              /* Responsive Design */
+              
+              @media (max-width: 1200px) {
+                  .vehicles-showcase {
+                      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                  }
+              }
+              
+              @media (max-width: 992px) {
+                  .reservation-hero {
+                      padding: 6rem 0 4rem;
+                      background-attachment: scroll;
+                  }
+                  .hero-content h1 {
+                      font-size: 2.5rem;
+                  }
+                  .luxury-progress {
+                      max-width: 700px;
+                  }
+                  .vehicles-showcase {
+                      grid-template-columns: 1fr 1fr;
+                  }
+                  .form-row {
+                      grid-template-columns: 1fr;
+                  }
+              }
+              
+              @media (max-width: 768px) {
+                  .reservation-hero {
+                      padding: 5rem 0 3rem;
+                  }
+                  .hero-content h1 {
+                      font-size: 2rem;
+                  }
+                  .hero-content p {
+                      font-size: 1.1rem;
+                  }
+                  .luxury-progress {
+                      display: none;
+                  }
+                  .reservation-form-container {
+                      padding: 2rem;
+                  }
+                  .reservation-step h2 {
+                      font-size: 1.6rem;
+                  }
+              }
